@@ -15,6 +15,6 @@ class GeometryField(fields.TextAreaField):
     def _value(self):
         if self.raw_data:
             return self.raw_data[0]
-        if type(self.data) is WKBElement:
+        if isinstance(self.data, WKBElement):
             return to_shape(self.data).to_wkt()
         return ''
