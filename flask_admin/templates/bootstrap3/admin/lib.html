@@ -226,6 +226,7 @@
   window.MAPBOX_ACCESS_TOKEN = "{{ config.MAPBOX_ACCESS_TOKEN }}";
   {% endif %}
   </script>
+  <script src="{{ admin_static.url(filename='vendor/mapbox/wellknown.js', v='0.5.0') }}"></script>
   <script src="{{ admin_static.url(filename='vendor/leaflet/leaflet.js', v='0.7.3') }}"></script>
   <script src="{{ admin_static.url(filename='vendor/leaflet/leaflet.draw.js', v='0.2.3') }}"></script>
   {% endif %}

@@ -107,7 +107,7 @@
 
         var editableLayers;
         if ($el.val()) {
-          editableLayers = new L.geoJson(JSON.parse($el.val()));
+          editableLayers = new L.geoJson(wellknown.parse($el.val()));
           center = center || editableLayers.getBounds().getCenter();
         } else {
           editableLayers = new L.geoJson();
@@ -244,7 +244,7 @@
           } else {
             geo = geo.features[0].geometry;
           }
-          $el.val(JSON.stringify(geo));
+          $el.val(wellknown.stringify(geo));
         }
 
         // handle creation
