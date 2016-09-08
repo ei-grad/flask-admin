@@ -18,3 +18,8 @@ class GeometryField(fields.TextAreaField):
         if isinstance(self.data, WKBElement):
             return to_shape(self.data).to_wkt()
         return ''
+
+    def process_formdata(self, valuelist):
+        # exclude empty values from valuelist, because empty WKT is invalid WKT
+        if valuelist and valuelist[0]:
+            self.data = valuelist[0]
